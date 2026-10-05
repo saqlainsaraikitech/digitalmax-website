@@ -970,3 +970,25 @@ footer{background:#1d3448;color:#fff;border-top:1px solid rgba(255,255,255,.1)}
   .mx-cta2{padding:44px 30px;gap:32px}
   .mx-cta2-card{min-width:0;width:100%}
 }
+
+/* ============ v54 — About premium: founder card + story ============ */
+.mx-founder-card{position:relative;max-width:400px;margin-left:auto;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:28px;padding:16px;backdrop-filter:blur(8px);box-shadow:0 44px 90px rgba(0,0,0,.45)}
+.mx-founder-card::before{content:"";position:absolute;inset:-1px;border-radius:29px;padding:1.5px;background:linear-gradient(140deg,rgba(255,138,92,.7),rgba(255,138,92,0) 35%,rgba(255,138,92,0) 65%,rgba(199,75,37,.5));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.mx-founder-photo{position:relative;border-radius:20px;overflow:hidden}
+.mx-founder-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.mx-founder-tag{position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(12,26,40,.72);border:1px solid rgba(255,255,255,.2);padding:8px 15px;border-radius:99px;backdrop-filter:blur(6px)}
+.mx-founder-tag .dot{width:7px;height:7px;border-radius:50%;background:#ff7a4d;box-shadow:0 0 10px #ff7a4d}
+.mx-founder-meta{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 8px 8px}
+.mx-founder-meta b{display:block;color:#fff;font-size:19px;letter-spacing:-.01em}
+.mx-founder-meta span{display:block;color:#93a5b8;font-size:13px;margin-top:3px}
+.mx-founder-meta a{flex:none;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#c74b25,#ff8a5c);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(199,75,37,.45);transition:transform .25s}
+.mx-founder-meta a:hover{transform:translateY(-3px) rotate(45deg)}
+.mx-story-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:64px;align-items:start}
+.mx-story-pull{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(20px,2.4vw,26px);line-height:1.55;color:var(--ink);margin-top:24px;padding-left:24px;border-left:3px solid var(--coral)}
+.mx-story-pull b{color:var(--coral)}
+.mx-story-body p{font-size:17px;line-height:1.8;color:#3d4f61;margin-bottom:20px}
+.mx-story-body p:last-child{margin-bottom:0}
+@media(max-width:900px){
+  .mx-story-grid{grid-template-columns:1fr;gap:32px}
+  .mx-founder-card{margin:0 auto}
+}

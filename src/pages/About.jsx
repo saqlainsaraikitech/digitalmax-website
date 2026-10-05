@@ -35,14 +35,18 @@ export default function About() {
             </div>
           </Reveal>
           <Reveal delay={0.12}>
-            <div className="mx-phero-fig">
-              <div className="about-hero-card">
-                <span className="about-hero-eyebrow">Founder</span>
-                <span className="about-hero-name">Saqlain Abid</span>
-                <span className="about-hero-role">Shopify & WordPress Developer · AI Content Creator</span>
-                <p>Builds online stores, business websites and content automation systems — and teaches others to do the same.</p>
-                <a className="about-site-link" href="https://saqlainabid.com" target="_blank" rel="noopener">
-                  <Globe size={15} /> saqlainabid.com <ArrowUpRight size={14} />
+            <div className="mx-founder-card">
+              <div className="mx-founder-photo">
+                <img src="/images/founder-saqlain.jpg" alt="Saqlain Abid — Founder, DigitalMax" loading="lazy" decoding="async" />
+                <span className="mx-founder-tag"><span className="dot" /> Founder</span>
+              </div>
+              <div className="mx-founder-meta">
+                <div>
+                  <b>Saqlain Abid</b>
+                  <span>Shopify &amp; WordPress Developer · AI Content Creator</span>
+                </div>
+                <a href="https://saqlainabid.com" target="_blank" rel="noopener" aria-label="saqlainabid.com">
+                  <ArrowUpRight size={18} />
                 </a>
               </div>
             </div>
@@ -52,18 +56,19 @@ export default function About() {
 
       <section className="mx-sec">
         <div className="wrap">
-          <Reveal className="mx-head">
-            <span className="mx-badge light"><i /> Our story</span>
-            <h2 className="mx-h2">Built by a maker, <mark>not a marketing agency.</mark></h2>
-          </Reveal>
-          <div className="mx-about-story">
+          <div className="mx-story-grid">
             <Reveal>
-              <p>DigitalMax started with one simple observation: most small businesses do not need a fancy agency — they need someone who can actually <b>build</b>. Someone who ships the website, sets up the store, creates the content system, and stays available when things break.</p>
-              <p>That is what we do. Every service we sell is something we use ourselves first — the same tools we deliver to clients, the same automation systems we teach in our courses, the same content workflows we run every day.</p>
+              <span className="mx-eyebrow">Our story</span>
+              <h2 className="mx-h2">Built by a maker, <mark>not a marketing agency.</mark></h2>
+              <p className="mx-story-pull">Most small businesses don&rsquo;t need a fancy agency — they need someone who can actually <b>build</b>.</p>
             </Reveal>
             <Reveal delay={0.1}>
-              <p>No account managers. No jargon-filled proposals. You talk directly to the people doing the work, you see exactly what you are getting, and you only pay when you are happy with it.</p>
-              <p>Whether you need a website that brings customers, a store that sells while you sleep, or the skills to build it all yourself — you are in the right place.</p>
+              <div className="mx-story-body">
+                <p>DigitalMax started with that exact observation. You need someone who ships the website, sets up the store, creates the content system — and stays available when things break.</p>
+                <p>That is what we do. Every service we sell is something we use ourselves first: the same tools we deliver to clients, the same automation systems we teach in our courses, the same content workflows we run every day.</p>
+                <p>No account managers. No jargon-filled proposals. You talk directly to the people doing the work, and you approve everything before it goes live.</p>
+                <p>Whether you need a website that brings customers, a store that sells while you sleep, or the skills to build it all yourself — you are in the right place.</p>
+              </div>
             </Reveal>
           </div>
         </div>
@@ -72,7 +77,7 @@ export default function About() {
       <section className="mx-sec" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <Reveal className="mx-head">
-            <span className="mx-badge light"><i /> What we do</span>
+            <span className="mx-eyebrow">What we do</span>
             <h2 className="mx-h2">Four pillars, <mark>one team.</mark></h2>
           </Reveal>
           <div className="mx-grid-2">
@@ -92,7 +97,7 @@ export default function About() {
       <section className="mx-sec" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <Reveal className="mx-head">
-            <span className="mx-badge light"><i /> Also from us</span>
+            <span className="mx-eyebrow">Also from us</span>
             <h2 className="mx-h2">Meet <mark>Saraiki Tech.</mark></h2>
             <p className="mx-sub">Our tech brand — practical tutorials and digital-skills content, made simple for everyone.</p>
           </Reveal>
@@ -119,7 +124,7 @@ export default function About() {
       <section className="mx-sec" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <Reveal className="mx-head">
-            <span className="mx-badge light"><i /> How we work</span>
+            <span className="mx-eyebrow">How we work</span>
             <h2 className="mx-h2">What you can <mark>expect from us.</mark></h2>
           </Reveal>
           <div className="mx-grid-3">
