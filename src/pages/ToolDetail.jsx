@@ -179,7 +179,7 @@ export default function ToolDetail() {
               </div>
               <div className="mx-note">
                 <b>How ordering works</b>
-                <p>Tap Buy Now — WhatsApp opens with your order ready. I confirm payment and deliver access, usually within minutes.</p>
+                <p>Tap Buy Now — WhatsApp opens with your order ready. We confirm payment and deliver access, usually within minutes.</p>
               </div>
               <Link className="mx-tool-link" to="/tools" style={{ marginTop: 20 }}>
                 <ArrowLeft size={15} /> Back to all tools
@@ -191,7 +191,7 @@ export default function ToolDetail() {
 
       <CtaBanner
         title="Questions about <mark>this tool?</mark>"
-        text="Ask me anything — compatibility, delivery time, or bulk orders."
+        text="Ask us anything — compatibility, delivery time, or bulk orders."
         waText={`Hi DigitalMax! I have a question about: ${t.name}`}
       />
     </>

@@ -114,7 +114,7 @@ export default function Service() {
           <div className="wrap">
             <Reveal className="mx-head">
               <span className="mx-badge light"><i /> Our work</span>
-              <h2 className="mx-h2">Watch what <mark>I create.</mark></h2>
+              <h2 className="mx-h2">Watch what <mark>we create.</mark></h2>
               <p className="mx-sub">Real AI videos produced by DigitalMax — press play.</p>
             </Reveal>
             <div className="work-grid" style={{ marginTop: 42 }}>
@@ -133,7 +133,7 @@ export default function Service() {
           <div className="wrap">
             <Reveal className="mx-head">
               <span className="mx-badge light"><i /> Recent work</span>
-              <h2 className="mx-h2">I&rsquo;ve done <mark>this before.</mark></h2>
+              <h2 className="mx-h2">We&rsquo;ve done <mark>this before.</mark></h2>
               <p className="mx-sub">Real projects, live right now — click through.</p>
             </Reveal>
             <div style={{ marginTop: 42 }}>

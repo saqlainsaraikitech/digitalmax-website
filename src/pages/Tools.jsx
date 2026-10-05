@@ -32,7 +32,7 @@ export default function Tools() {
           <Reveal>
             <span className="mx-badge light"><i /> Premium Tools</span>
             <h1>Pro tools, <mark>friendly cost.</mark></h1>
-            <p className="lead">Genuine premium subscriptions and credits — pick your tool, tap buy, and get access over WhatsApp. I deliver personally, usually under 10 minutes.</p>
+            <p className="lead">Genuine premium subscriptions and credits — pick your tool, tap buy, and get access over WhatsApp. We deliver personally, usually under 10 minutes.</p>
             <div className="mx-trustchips">
               <span className="mx-tchip"><BadgeCheck size={17} /> Genuine products</span>
               <span className="mx-tchip"><Zap size={17} /> Under 10 minutes delivery</span>

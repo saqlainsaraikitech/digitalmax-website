@@ -10,7 +10,6 @@ import { SERVICES, PROJECTS, waLink } from '../data/site';
 import { Reveal } from '../components/ui';
 import builtinCourses from '../data/courses.json';
 import { COURSE_BADGE } from '../data/courseBadges';
-import heroImg from '../assets/home-hero-light.jpg';
 const svcWebsite = '/images/svc-png-website.png';
 const svcAi = '/images/svc-png-ai.png';
 const svcShopify = '/images/svc-png-shopify.png';
@@ -24,7 +23,6 @@ import badgeYoutube from '../assets/badge-youtube.png';
 import badgeTiktok from '../assets/badge-tiktok.png';
 import badgeConsult from '../assets/badge-consultancy.png';
 import pngWhatsapp from '../assets/png-whatsapp.png';
-import pngRocket from '../assets/png-rocket.png';
 
 const SVC_IMG = {
   'website-development': svcWebsite,
@@ -76,61 +74,77 @@ const STEPS = [
 ];
 
 function Hero() {
-  const trust = [
-    { icon: MessageCircle, t: 'Same-day', d: 'replies' },
-    { icon: Users, t: 'Dedicated team', d: 'one point of contact' },
-    { icon: Globe2, t: 'PK · UK · US', d: 'clients worldwide' },
-    { icon: BadgeCheck, t: 'Pay after', d: 'design approval' },
+  const stats = [
+    { b: '19', d: 'Premium AI tools, ready to use' },
+    { b: '3', d: 'Automation crash courses' },
+    { b: '<10 min', d: 'Average tool delivery time' },
   ];
-  const scrollToWork = () => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
+  const marquee = ['Web Development', 'AI Content Creation', 'Shopify Stores', 'YouTube Automation', 'TikTok Automation', 'Facebook Automation', 'Premium AI Tools', 'Consultancy'];
   return (
-    <header className="mx-hero light">
-      <div className="wrap mx-hero-grid">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <span className="mx-badge light"><i /> Full-service digital agency</span>
-          <h1>We build websites, stores &amp; videos that <mark>bring you customers.</mark></h1>
-          <p className="mx-lead">One agency for your entire digital presence — websites, AI content, Shopify stores and automation. Message us on WhatsApp and talk directly to the team doing the work. Based in Pakistan, working with clients worldwide.</p>
-          <div className="mx-ctas">
+    <header className="mx-hero2">
+      <div className="mx-hero2-bg" aria-hidden="true" />
+      <div className="wrap mx-hero2-grid">
+        <motion.div initial={{ opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65 }}>
+          <span className="mx-hero2-eyebrow"><span className="dot" /> DigitalMax — Full-service digital agency</span>
+          <h1>We build websites, stores &amp; videos <em>that bring you customers.</em></h1>
+          <p className="mx-hero2-lead">One team for your entire digital presence — web development, AI content, Shopify stores, automation courses and premium AI tools. You talk directly to the people doing the work, on WhatsApp.</p>
+          <div className="mx-hero2-ctas">
             <a className="btn btn-coral" href={waLink('Hi DigitalMax! I want to discuss a project.')} target="_blank" rel="noopener">
               <img loading="lazy" decoding="async" src={pngWhatsapp} className="mx-wa-ico" alt="" /> Chat on WhatsApp <ArrowRight size={17} />
             </a>
-            <button className="btn mx-btn-outline" onClick={scrollToWork}>
-              See live websites <ArrowRight size={17} />
-            </button>
+            <Link className="btn mx-hero2-ghost" to="/courses">
+              Explore courses <ArrowRight size={17} />
+            </Link>
           </div>
-          <div className="mx-trust">
-            {trust.map((x) => (
-              <div key={x.d}><x.icon size={26} /><span><b>{x.t}</b>{x.d}</span></div>
+          <div className="mx-hero2-stats">
+            {stats.map((x) => (
+              <div key={x.d}><b>{x.b}</b><span>{x.d}</span></div>
             ))}
-          </div>
-          <div className="mx-stats light">
-            <div><b>100+</b><span>Projects delivered</span></div>
-            <div><b>5–7 days</b><span>Typical website delivery</span></div>
-            <div><b>4+ countries</b><span>Clients served</span></div>
-            <div><b>Direct</b><span>WhatsApp access</span></div>
           </div>
         </motion.div>
         <motion.div
-          className="mx-hero-visual big"
-          initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }}
+          className="mx-hero2-visual"
+          initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
         >
-          <img src={heroImg} className="mx-hero-photo" alt="DigitalMax digital workspace" />
-          <img loading="lazy" decoding="async" src={pngRocket} className="mx-rocket" alt="" />
-          <div className="mx-chat">
-            <div className="mx-chat-head">
-              <img loading="lazy" decoding="async" src={pngWhatsapp} className="mx-chat-ava" alt="DigitalMax" />
-              <span><b>DigitalMax</b><i>online</i></span>
+          <div className="mx-browser">
+            <div className="mx-browser-bar">
+              <span className="bdots"><i /><i /><i /></span>
+              <span className="burl"><Search size={12} /> digitalmax.pk</span>
             </div>
-            <div className="mx-chat-body">
-              <p className="in">Hi! I need a website for my clothing brand. What will it cost, and how long?</p>
-              <p className="out">Hello! Send us your products and logo — we&rsquo;ll share a design plan and exact quote today.</p>
-              <p className="in">And how soon can we launch?</p>
-              <p className="out">5–7 days after we get your content. You approve the design before paying anything.</p>
+            <div className="mx-browser-body">
+              <div className="bb-nav">
+                <span className="bb-logo" />
+                <span className="bb-links"><i /><i /><i /></span>
+                <span className="bb-cta" />
+              </div>
+              <div className="bb-hero">
+                <span className="bb-pill" />
+                <div className="bb-h1"><i /><i /></div>
+                <div className="bb-sub"><i /><i /><i /></div>
+                <div className="bb-btns"><span /><span /></div>
+              </div>
+              <div className="bb-cards"><span /><span /><span /></div>
             </div>
-            <div className="mx-chat-foot">This is what working together looks like.</div>
           </div>
+          <motion.div className="mx-fcard fc-chat" animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}>
+            <img loading="lazy" decoding="async" src={pngWhatsapp} className="wava" alt="" />
+            <div><b>Tool delivered <span className="tick">✓✓</span></b><span>CapCut Pro — in 8 minutes</span></div>
+          </motion.div>
+          <motion.div className="mx-fcard fc-course" animate={{ y: [0, 10, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}>
+            <img loading="lazy" decoding="async" src="/images/course-tiktok.png" alt="TikTok Automation course" />
+            <div><b>TikTok Automation</b><span>Crash course · 1 month</span></div>
+          </motion.div>
+          <motion.div className="mx-fcard fc-tools" animate={{ y: [0, -8, 0] }} transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 1.6 }}>
+            <Zap size={20} />
+            <div><b>19 premium tools</b><span>AI, SEO, editing &amp; more</span></div>
+          </motion.div>
         </motion.div>
+      </div>
+      <div className="mx-hero2-marquee" aria-hidden="true">
+        <div className="mq-track2">
+          {[...marquee, ...marquee].map((m, i) => (<span key={i}>{m}</span>))}
+        </div>
       </div>
     </header>
   );
@@ -370,10 +384,10 @@ function Process() {
 
 const FAQS = [
   { q: 'How much does a website cost?', a: 'It depends on what you need. Message us on WhatsApp with your requirements and we\u2019ll give you an exact quote \u2014 usually the same day.' },
-  { q: 'How long does it take?', a: 'A business website takes 5\u20137 days once we have your content (text, photos, logo). A Shopify store takes 7\u201310 days.' },
-  { q: 'Do I pay in advance?', a: 'No. You approve the design first \u2014 then we finalize and launch.' },
+  { q: 'How long does it take?', a: 'Once we have your content (text, photos, logo), most business websites are ready within days, not weeks. Shopify stores take a little longer because of product and payment setup.' },
+  { q: 'Do I pay in advance?', a: 'We work in clear milestones, and you approve the design before we build it out \u2014 no surprises at any step.' },
   { q: 'Can you fix or redesign my current website?', a: 'Yes. Send us the link on WhatsApp and we\u2019ll honestly tell you what we\u2019d change.' },
-  { q: 'Do you work with clients outside Pakistan?', a: 'Yes \u2014 we work with clients in the UK, the US and the Gulf. WhatsApp makes the time difference easy.' },
+  { q: 'Do you work with clients outside Pakistan?', a: 'Yes \u2014 we work across time zones, and WhatsApp makes communication easy wherever you are.' },
 ];
 
 function Faq() {

@@ -97,7 +97,7 @@ export default function Consultancy() {
 
       <CtaBanner
         title="Your idea deserves a <mark>real plan.</mark>"
-        text="One focused session with me — you leave with a written roadmap, not vague advice."
+        text="One focused session with our team — you leave with a written roadmap, not vague advice."
         waText="Hi DigitalMax! I want to book a consultancy session."
       />
     </>
