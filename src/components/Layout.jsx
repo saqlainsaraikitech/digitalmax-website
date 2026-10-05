@@ -1,6 +1,6 @@
 import { useState, useEffect, useLayoutEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, ArrowUpRight, MessageCircle } from 'lucide-react';
+import { Menu, X, ChevronDown, ArrowUpRight, MessageCircle, GraduationCap } from 'lucide-react';
 import * as icons from 'lucide-react';
 import { SERVICES, waLink } from '../data/site';
 import Logo from './Logo';
@@ -53,6 +53,9 @@ export function Navbar() {
           </div>
           <NavLink className="nl" to="/tools">Tools</NavLink>
           <NavLink className="nl" to="/courses">Courses</NavLink>
+          <a className="nl nl-lms" href="https://lms.digitalmax.pk" target="_blank" rel="noopener">
+            <GraduationCap size={16} /> LMS
+          </a>
           <NavLink className="nl" to="/about">About</NavLink>
           <NavLink className="nl" to="/consultancy">Consultancy</NavLink>
           <NavLink className="nl" to="/contact">Contact</NavLink>
@@ -90,6 +93,9 @@ export function Footer() {
             <Link to="/about">About Us</Link>
             <Link to="/tools">AI Tools</Link>
             <Link to="/courses">Courses</Link>
+            <a href="https://lms.digitalmax.pk" target="_blank" rel="noopener">
+              Student LMS <ArrowUpRight size={13} style={{ display: 'inline', verticalAlign: 'middle' }} />
+            </a>
             <Link to="/consultancy">Consultancy</Link>
             <Link to="/contact">Contact</Link>
             <a href={waLink('Hi DigitalMax!')} target="_blank" rel="noopener">

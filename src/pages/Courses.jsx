@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Clock, BadgeCheck, Wallet } from 'lucide-react';
+import { ArrowRight, Clock, BadgeCheck, Wallet, GraduationCap } from 'lucide-react';
 import builtin from '../data/courses.json';
 import { COURSE_BADGE } from '../data/courseBadges';
 import { waLink } from '../data/site';
@@ -39,6 +39,17 @@ export default function Courses() {
           </Reveal>
         </div>
       </header>
+
+      <section className="mx-sec" style={{ paddingBottom: 0 }}>
+        <div className="wrap">
+          <Reveal>
+            <div className="mx-lms-strip" style={{ marginTop: 0 }}>
+              <span><GraduationCap size={20} /> Already enrolled?</span>
+              <a href="https://lms.digitalmax.pk" target="_blank" rel="noopener">Log in to the student LMS <ArrowRight size={16} /></a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       <section className="mx-sec">
         <div className="wrap">

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowRight, ArrowUpRight, MessageCircle, Play, Globe2, Zap, Headset, MessagesSquare, Users,
-  Trophy, Cpu, Timer, Earth, BadgeCheck, Search, Rocket, SlidersHorizontal, PartyPopper, Star, CheckCircle2,
+  Trophy, Cpu, Timer, Earth, BadgeCheck, Search, Rocket, SlidersHorizontal, PartyPopper, Star, CheckCircle2, GraduationCap,
 } from 'lucide-react';
 import * as icons from 'lucide-react';
 import { SERVICES, PROJECTS, waLink } from '../data/site';
@@ -296,6 +296,12 @@ function Courses() {
             </Reveal>
           ))}
         </div>
+        <Reveal>
+          <div className="mx-lms-strip">
+            <span><GraduationCap size={20} /> Already enrolled?</span>
+            <a href="https://lms.digitalmax.pk" target="_blank" rel="noopener">Open the student LMS <ArrowRight size={16} /></a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

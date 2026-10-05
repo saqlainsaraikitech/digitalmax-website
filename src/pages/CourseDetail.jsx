@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowRight, ArrowLeft, CheckCircle2, Clock, BadgeCheck, Wallet } from 'lucide-react';
+import { ArrowRight, ArrowLeft, CheckCircle2, Clock, BadgeCheck, Wallet, GraduationCap } from 'lucide-react';
 import builtin from '../data/courses.json';
 import { COURSE_BADGE } from '../data/courseBadges';
 import { waLink } from '../data/site';
@@ -62,6 +62,13 @@ export default function CourseDetail() {
                 target="_blank" rel="noopener"
               >
                 <img loading="lazy" decoding="async" src={pngWhatsapp} className="mx-wa-ico" alt="" /> Enroll Now <ArrowRight size={17} />
+              </a>
+              <a
+                className="btn mx-hero2-ghost"
+                href="https://lms.digitalmax.pk"
+                target="_blank" rel="noopener"
+              >
+                <GraduationCap size={17} /> Open the LMS
               </a>
             </div>
           </Reveal>
