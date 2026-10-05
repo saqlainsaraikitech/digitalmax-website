@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, animate, useInView } from 'framer-motion';
-import { Plus, ArrowRight, Play, ArrowUpRight } from 'lucide-react';
+import { Plus, ArrowRight, Play, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { waLink } from '../data/site';
 import pngWhatsapp from '../assets/png-whatsapp.png';
 
@@ -74,21 +74,28 @@ export function Faq({ items }) {
   );
 }
 
-/* Big CTA banner (matches home's light-premium panel) */
+/* Big CTA banner — premium dark edition */
 export function CtaBanner({ title, text, waText }) {
   return (
     <section className="mx-sec" style={{ paddingTop: 0 }}>
       <div className="wrap">
         <Reveal>
-          <div className="mx-cta">
-            <div>
+          <div className="mx-cta2">
+            <div className="mx-cta2-bg" aria-hidden="true" />
+            <div className="mx-cta2-left">
+              <span className="mx-cta2-eyebrow"><span className="dot" /> Get started</span>
               <h2 dangerouslySetInnerHTML={{ __html: title }} />
               <p>{text || 'Message us on WhatsApp — we reply personally, usually the same day.'}</p>
+              <div className="mx-cta2-points">
+                <span><CheckCircle2 size={16} /> Direct chat, no forms</span>
+                <span><CheckCircle2 size={16} /> Honest plan &amp; pricing</span>
+              </div>
             </div>
-            <a className="btn btn-lime mx-cta-btn" href={waLink(waText || 'Hi DigitalMax! I have a project in mind.')} target="_blank" rel="noopener">
-              <img loading="lazy" decoding="async" src={pngWhatsapp} className="mx-wa-ico big" alt="" />
-              <span><small>Start a Conversation</small><b>+92 330 6563410</b></span>
-              <ArrowRight size={18} />
+            <a className="mx-cta2-card" href={waLink(waText || 'Hi DigitalMax! I have a project in mind.')} target="_blank" rel="noopener">
+              <span className="mx-cta2-wa"><img loading="lazy" decoding="async" src={pngWhatsapp} alt="WhatsApp" /></span>
+              <span className="mx-cta2-info"><small>Chat on WhatsApp</small><b>+92 330 6563410</b></span>
+              <span className="mx-cta2-arrow"><ArrowRight size={20} /></span>
+              <span className="mx-cta2-online"><i /> online now</span>
             </a>
           </div>
         </Reveal>

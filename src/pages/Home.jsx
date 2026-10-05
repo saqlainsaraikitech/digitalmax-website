@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import * as icons from 'lucide-react';
 import { SERVICES, PROJECTS, waLink } from '../data/site';
-import { Reveal } from '../components/ui';
+import { Reveal, CtaBanner } from '../components/ui';
 import builtinCourses from '../data/courses.json';
 import { COURSE_BADGE } from '../data/courseBadges';
 const svcWebsite = '/images/svc-png-website.png';
@@ -421,23 +421,7 @@ function Faq() {
 
 function BigCta() {
   return (
-    <section className="mx-sec" style={{ paddingTop: 0 }}>
-      <div className="wrap">
-        <Reveal>
-          <div className="mx-cta">
-            <div>
-              <h2>Tell us about your project.</h2>
-              <p>Message us on WhatsApp — we reply personally, usually the same day.</p>
-            </div>
-            <a className="btn btn-lime mx-cta-btn" href={waLink('Hi DigitalMax! I have a project in mind.')} target="_blank" rel="noopener">
-              <img loading="lazy" decoding="async" src={pngWhatsapp} className="mx-wa-ico big" alt="" />
-              <span><small>Start a Conversation</small><b>+92 330 6563410</b></span>
-              <ArrowRight size={18} />
-            </a>
-          </div>
-        </Reveal>
-      </div>
-    </section>
+    <CtaBanner title="Tell us about <mark>your project.</mark>" />
   );
 }
 
