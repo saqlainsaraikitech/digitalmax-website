@@ -27,11 +27,18 @@ export function ScrollToTop() {
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
   useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <nav className="nav">
+    <nav className={`nav${scrolled ? ' scrolled' : ''}`}>
       <div className="wrap nav-inner">
         <Link className="brand" to="/">
           <Logo />

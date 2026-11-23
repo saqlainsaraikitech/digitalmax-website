@@ -42,7 +42,8 @@ h1,h2,h3,h4{font-family:var(--font-d);line-height:1.04;letter-spacing:-.025em}
 .btn-glow:hover{box-shadow:0 0 34px rgba(199,75,37,.55);transform:translateY(-3px)}
 
 /* ---------- nav : dark ---------- */
-.nav{position:sticky;top:0;z-index:100;background:rgba(30,52,72,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.1)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:linear-gradient(180deg,rgba(12,26,40,.45),rgba(12,26,40,0));border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+.nav.scrolled{background:rgba(12,26,40,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.1)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-family:var(--font-d);font-weight:700;font-size:22px;color:#fff}
 .brand .dm-logo{height:44px;width:auto;display:block}
@@ -705,7 +706,7 @@ footer{background:#1d3448;color:#fff;border-top:1px solid rgba(255,255,255,.1)}
   .mx-phero-grid{grid-template-columns:1fr;gap:40px}
 }
 @media(max-width:960px){
-  .mx-phero{padding:56px 0 48px}
+  .mx-phero{padding:116px 0 48px}
   .mx-tline{grid-template-columns:repeat(2,1fr)}
   .mx-tools-grid{grid-template-columns:repeat(2,1fr)}
   .mx-td-grid{grid-template-columns:1fr}
@@ -805,7 +806,7 @@ footer{background:#1d3448;color:#fff;border-top:1px solid rgba(255,255,255,.1)}
 @media(max-width:700px){.mx-saraiki-card{padding:30px}}
 
 /* ===== 404 page ===== */
-.mx-nf{padding:110px 0 90px}
+.mx-nf{padding:140px 0 90px;background:#0c1a28}
 .mx-nf-card{max-width:720px;margin:0 auto;text-align:center;background:#fff;border:3px solid var(--ink);border-radius:28px;box-shadow:10px 10px 0 var(--ink);padding:56px 40px}
 .mx-nf-code{font-family:var(--font-d);font-weight:800;font-size:clamp(90px,16vw,150px);line-height:1;margin:18px 0 6px;letter-spacing:2px}
 .mx-nf-code mark{background:var(--coral);color:#fff;padding:0 18px;border-radius:18px}
@@ -897,7 +898,7 @@ footer{background:#1d3448;color:#fff;border-top:1px solid rgba(255,255,255,.1)}
 .mx-h2{font-size:clamp(32px,4.2vw,50px);letter-spacing:-.03em}
 .mx-sub{line-height:1.7}
 /* inner page heroes -> dark premium, matching homepage hero */
-.mx-phero{background:#0c1a28;padding:88px 0 76px}
+.mx-phero{background:#0c1a28;padding:132px 0 76px}
 .mx-phero::before{background:radial-gradient(700px 360px at 12% 8%,rgba(199,75,37,.22),transparent 65%),radial-gradient(820px 420px at 88% 10%,rgba(41,68,97,.55),transparent 65%)}
 .mx-phero h1{color:#fff;letter-spacing:-.03em}
 .mx-phero h1 mark{color:#ff8a5c}
