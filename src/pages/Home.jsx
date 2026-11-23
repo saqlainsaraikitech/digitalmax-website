@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  ArrowRight, ArrowUpRight, MessageCircle, Play, Globe2, Zap, Headset, MessagesSquare, Users,
+  ArrowRight, ArrowUpRight, MessageCircle, Play, Globe2, Headset, MessagesSquare, Users,
   Trophy, Cpu, Timer, Earth, BadgeCheck, Search, Rocket, SlidersHorizontal, PartyPopper, Star, CheckCircle2, GraduationCap,
 } from 'lucide-react';
 import * as icons from 'lucide-react';
@@ -80,65 +80,37 @@ function Hero() {
     { b: '<10 min', d: 'Average tool delivery time' },
   ];
   const marquee = ['Web Development', 'AI Content Creation', 'Shopify Stores', 'YouTube Automation', 'TikTok Automation', 'Facebook Automation', 'Premium AI Tools', 'Consultancy'];
+  const work = ['velzohra.com', 'spreads.pk', 'tayyibmalik.co'];
   return (
-    <header className="mx-hero2">
-      <div className="mx-hero2-bg" aria-hidden="true" />
-      <div className="wrap mx-hero2-grid">
+    <header className="mx-hero3">
+      <video className="mx-hero3-video" src="/videos/lumina-ai.mp4" poster="/images/lumina-poster.jpg" autoPlay muted loop playsInline aria-hidden="true" />
+      <div className="mx-hero3-scrim" aria-hidden="true" />
+      <div className="wrap mx-hero3-inner">
         <motion.div initial={{ opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65 }}>
-          <span className="mx-hero2-eyebrow"><span className="dot" /> DigitalMax — Full-service digital agency</span>
+          <span className="mx-hero3-badge"><span className="dot" /> Websites · Stores · AI Content</span>
           <h1>We build websites, stores &amp; videos <em>that bring you customers.</em></h1>
-          <p className="mx-hero2-lead">One team for your entire digital presence — web development, AI content, Shopify stores, automation courses and premium AI tools. You talk directly to the people doing the work, on WhatsApp.</p>
-          <div className="mx-hero2-ctas">
+          <p className="mx-hero3-lead">One team for your entire digital presence — web development, AI content, Shopify stores, automation courses and premium AI tools. You talk directly to the people doing the work, on WhatsApp.</p>
+          <div className="mx-hero3-ctas">
             <a className="btn btn-coral" href={waLink('Hi DigitalMax! I want to discuss a project.')} target="_blank" rel="noopener">
               <img loading="lazy" decoding="async" src={pngWhatsapp} className="mx-wa-ico" alt="" /> Chat on WhatsApp <ArrowRight size={17} />
             </a>
-            <Link className="btn mx-hero2-ghost" to="/courses">
+            <Link className="btn mx-hero3-ghost" to="/courses">
               Explore courses <ArrowRight size={17} />
             </Link>
           </div>
-          <div className="mx-hero2-stats">
+          <div className="mx-hero3-stats">
             {stats.map((x) => (
               <div key={x.d}><b>{x.b}</b><span>{x.d}</span></div>
             ))}
           </div>
-        </motion.div>
-        <motion.div
-          className="mx-hero2-visual"
-          initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-        >
-          <div className="mx-browser">
-            <div className="mx-browser-bar">
-              <span className="bdots"><i /><i /><i /></span>
-              <span className="burl"><Search size={12} /> digitalmax.pk</span>
-            </div>
-            <div className="mx-browser-body">
-              <div className="bb-nav">
-                <span className="bb-logo" />
-                <span className="bb-links"><i /><i /><i /></span>
-                <span className="bb-cta" />
-              </div>
-              <div className="bb-hero">
-                <span className="bb-pill" />
-                <div className="bb-h1"><i /><i /></div>
-                <div className="bb-sub"><i /><i /><i /></div>
-                <div className="bb-btns"><span /><span /></div>
-              </div>
-              <div className="bb-cards"><span /><span /><span /></div>
+          <div className="mx-hero3-trust">
+            <span>Work you can actually visit</span>
+            <div className="mx-hero3-work">
+              {work.map((w) => (
+                <a key={w} href={`https://${w}`} target="_blank" rel="noopener">{w}</a>
+              ))}
             </div>
           </div>
-          <motion.div className="mx-fcard fc-chat" animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}>
-            <img loading="lazy" decoding="async" src={pngWhatsapp} className="wava" alt="" />
-            <div><b>Tool delivered <span className="tick">✓✓</span></b><span>CapCut Pro — in 8 minutes</span></div>
-          </motion.div>
-          <motion.div className="mx-fcard fc-course" animate={{ y: [0, 10, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}>
-            <img loading="lazy" decoding="async" src="/images/course-tiktok.png" alt="TikTok Automation course" />
-            <div><b>TikTok Automation</b><span>Crash course · 1 month</span></div>
-          </motion.div>
-          <motion.div className="mx-fcard fc-tools" animate={{ y: [0, -8, 0] }} transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 1.6 }}>
-            <Zap size={20} />
-            <div><b>19 premium tools</b><span>AI, SEO, editing &amp; more</span></div>
-          </motion.div>
         </motion.div>
       </div>
       <div className="mx-hero2-marquee" aria-hidden="true">
