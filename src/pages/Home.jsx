@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -73,6 +73,64 @@ const STEPS = [
   { n: '03', icon: Rocket, t: 'Approve, then we launch', d: 'We build, you review, we revise until you are happy. Payment comes after you approve the design.' },
 ];
 
+/* Flowing silk-wave ribbons (Adaptive-style, code-built — zero baked text) */
+function SilkWaves() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const canvas = ref.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let raf = 0;
+    let w = 0, h = 0;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const resize = () => {
+      const r = canvas.parentElement.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = Math.max(1, Math.floor(w * dpr));
+      canvas.height = Math.max(1, Math.floor(h * dpr));
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    resize();
+    window.addEventListener('resize', resize);
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const ribbons = [
+      { y: 0.28, amp: 46, len: 0.0038, speed: 0.00016, c: '148,178,205', a: 0.20, width: 90 },
+      { y: 0.42, amp: 60, len: 0.0030, speed: 0.00011, c: '199,75,37', a: 0.16, width: 70 },
+      { y: 0.55, amp: 52, len: 0.0044, speed: 0.00019, c: '120,150,180', a: 0.18, width: 110 },
+      { y: 0.68, amp: 40, len: 0.0034, speed: 0.00013, c: '255,138,92', a: 0.12, width: 60 },
+      { y: 0.82, amp: 56, len: 0.0026, speed: 0.00009, c: '148,178,205', a: 0.14, width: 100 },
+    ];
+    const draw = (t) => {
+      ctx.clearRect(0, 0, w, h);
+      ribbons.forEach((r, i) => {
+        const baseY = h * r.y + Math.sin(t * 0.00012 + i * 1.7) * 14;
+        const grad = ctx.createLinearGradient(0, 0, w, 0);
+        grad.addColorStop(0, `rgba(${r.c},0)`);
+        grad.addColorStop(0.25, `rgba(${r.c},${r.a})`);
+        grad.addColorStop(0.55, `rgba(${r.c},${r.a * 1.15})`);
+        grad.addColorStop(0.8, `rgba(${r.c},${r.a * 0.7})`);
+        grad.addColorStop(1, `rgba(${r.c},0)`);
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = r.width;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        for (let x = -20; x <= w + 20; x += 8) {
+          const y = baseY
+            + Math.sin(x * r.len + t * r.speed + i * 2.1) * r.amp
+            + Math.sin(x * r.len * 2.7 + t * r.speed * 1.6 + i) * r.amp * 0.35;
+          if (x === -20) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      });
+    };
+    if (reduced) { draw(0); return () => window.removeEventListener('resize', resize); }
+    const loop = (t) => { draw(t); raf = requestAnimationFrame(loop); };
+    raf = requestAnimationFrame(loop);
+    return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', resize); };
+  }, []);
+  return <canvas ref={ref} className="mx-hero3-canvas" aria-hidden="true" />;
+}
+
 function Hero() {
   const stats = [
     { b: '19', d: 'Premium AI tools, ready to use' },
@@ -83,7 +141,7 @@ function Hero() {
   const work = ['velzohra.com', 'spreads.pk', 'tayyibmalik.co'];
   return (
     <header className="mx-hero3">
-      <video className="mx-hero3-video" src="/videos/lumina-ai.mp4" poster="/images/lumina-poster.jpg" autoPlay muted loop playsInline aria-hidden="true" />
+      <SilkWaves />
       <div className="mx-hero3-scrim" aria-hidden="true" />
       <div className="wrap mx-hero3-inner">
         <motion.div initial={{ opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65 }}>
